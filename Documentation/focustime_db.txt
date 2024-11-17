@@ -1,0 +1,74 @@
+CREATE TABLE Application (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(255) NOT NULL,
+    categorie VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE SuiviTemps (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    application_id INT NOT NULL,
+    heureDebut DATETIME NOT NULL,
+    heureFin DATETIME NOT NULL,
+    duree TIME,
+    FOREIGN KEY (application_id) REFERENCES Application(id)
+);
+
+CREATE TABLE ObjectifProductivite (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nomObjectif VARCHAR(255) NOT NULL,
+    description TEXT,
+    dateDebut DATETIME NOT NULL,
+    dateFin DATETIME NOT NULL,
+    application_id INT NOT NULL,
+    FOREIGN KEY (application_id) REFERENCES Application(id)
+);
+
+CREATE TABLE Tache (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nomTache VARCHAR(255) NOT NULL,
+    description TEXT,
+    statut BOOLEAN NOT NULL DEFAULT FALSE,
+    objectif_id INT NOT NULL,
+    FOREIGN KEY (objectif_id) REFERENCES ObjectifProductivite(id)
+);
+
+CREATE TABLE PreferencesUtilisateur (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    notificationsPause BOOLEAN NOT NULL DEFAULT FALSE,
+    motDePasse VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE GestionnaireNotification (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    message TEXT NOT NULL,
+    date DATETIME NOT NULL
+);
+
+CREATE TABLE LimitesTemps (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    application_id INT NOT NULL,
+    utilisateur_id INT NOT NULL,
+    duree TIME NOT NULL,
+    FOREIGN KEY (application_id) REFERENCES Application(id),
+    FOREIGN KEY (utilisateur_id) REFERENCES PreferencesUtilisateur(id)
+);
+
+CREATE TABLE ApplicationsBloquees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    application_id INT NOT NULL,
+    utilisateur_id INT NOT NULL,
+    FOREIGN KEY (application_id) REFERENCES Application(id),
+    FOREIGN KEY (utilisateur_id) REFERENCES PreferencesUtilisateur(id)
+);
+
+ALTER TABLE GestionnaireNotification
+ADD COLUMN utilisateur_id INT,
+ADD FOREIGN KEY (utilisateur_id) REFERENCES PreferencesUtilisateur(id);
+
+ALTER TABLE GestionnaireNotification
+ADD COLUMN objectif_id INT,
+ADD FOREIGN KEY (objectif_id) REFERENCES ObjectifProductivite(id);
+
+ALTER TABLE GestionnaireNotification
+ADD COLUMN application_id INT,
+ADD FOREIGN KEY (application_id) REFERENCES Application(id);
