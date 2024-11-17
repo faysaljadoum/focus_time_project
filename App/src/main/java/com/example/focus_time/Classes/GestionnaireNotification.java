@@ -8,7 +8,7 @@ class GestionnaireNotification {
 
     // Méthodes pour envoyer des notifications
     public void envoyerNotification(String msg) { /* Envoie une notification */ }
-    public void programmerNotification(DateTime date, String msg) { /* Programme une notification */ }
+   // public void programmerNotification(DateTime date, String msg) { /* Programme une notification */ }
     public void envoyerNotificationDebutObjectif(ObjectifProductivite objectif) {
         /* Envoie une notification pour le début d'un objectif */
     }

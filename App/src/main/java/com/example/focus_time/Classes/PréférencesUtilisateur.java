@@ -1,6 +1,7 @@
 package com.example.focus_time.Classes;
 
 import java.util.List;
+import java.util.Map;
 
 // Classe pour gérer les préférences des utilisateurs
 class PréférencesUtilisateur {

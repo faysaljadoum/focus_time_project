@@ -1,5 +1,7 @@
 package com.example.focus_time.Classes;
 
+import java.util.List;
+
 // Classe pour gérer les applications et leurs états
 class GestionnaireApplication {
     private List<Application> applications; // Liste des applications
