@@ -1,4 +1,4 @@
-package com.example.focus_time;
+package com.example.focus_time.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

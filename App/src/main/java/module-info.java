@@ -15,4 +15,6 @@ module com.example.focus_time {
 
     opens com.example.focus_time to javafx.fxml;
     exports com.example.focus_time;
+    exports com.example.focus_time.Controllers;
+    opens com.example.focus_time.Controllers to javafx.fxml;
 }
