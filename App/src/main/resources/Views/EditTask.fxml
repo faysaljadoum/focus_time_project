@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.focus_time.Controllers.EditTaskController">
+    <VBox spacing="10" alignment="CENTER">
+        <Label text="Edit Task" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+        <TextField fx:id="taskNameField" promptText="Task Name"/>
+        <TextArea fx:id="taskDescriptionArea" promptText="Task Description" prefRowCount="4"/>
+        <ComboBox fx:id="taskStatusComboBox">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="In Progress"/>
+                    <String fx:value="Done"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <Button text="Save" onAction="#saveTask"/>
+        <Button text="Cancel" onAction="#cancelEdit"/>
+    </VBox>
+</AnchorPane>

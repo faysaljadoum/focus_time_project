@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="500.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.focus_time.Controllers.EditGoalController">
+    <!-- Goal Details -->
+    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Edit Goal" />
+    <TextField fx:id="goalNameField" promptText="Nom de l'objectif" />
+    <TextArea fx:id="goalDescriptionField" promptText="Description de l'objectif" />
+
+    <!-- Start Date -->
+    <Label text="Date de début (JJ/MM/AAAA)" />
+    <DatePicker fx:id="startDateField" editable="true" promptText="JJ/MM/AAAA" />
+
+    <!-- End Date -->
+    <Label text="Date de fin (JJ/MM/AAAA)" />
+    <DatePicker fx:id="endDateField" editable="true" promptText="JJ/MM/AAAA" />
+
+    <!-- Tasks Section -->
+    <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Tâches pour cet objectif" />
+    <VBox fx:id="tasksContainer" spacing="10.0">
+        <!-- Tasks will be dynamically added here -->
+    </VBox>
+
+    <!-- Buttons -->
+    <HBox alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
+        <Button onAction="#handleSaveChanges" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Save Changes" />
+        <Button onAction="#handleCancel" style="-fx-background-color: #f94c4c; -fx-text-fill: white;" text="Cancel" />
+    </HBox>
+</VBox>
