@@ -1,0 +1,23 @@
+/* style.css */
+.root {
+    -fx-background-color: #ecf0f1;
+}
+
+.label {
+    -fx-font-family: Arial;
+}
+
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-border-radius: 5;
+    -fx-padding: 10;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.vbox {
+    -fx-background-color: #34495E;
+}
