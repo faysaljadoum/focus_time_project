@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.focus_time.Controllers.TaskController">
+
+    <!-- Sidebar -->
+    <VBox prefWidth="200.0" style="-fx-background-color: #f4f4f4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <!-- Logo Section -->
+        <VBox alignment="CENTER" spacing="10.0" style="-fx-padding: 20 0 20 0;">
+            <ImageView fitHeight="80.0" fitWidth="80.0" preserveRatio="true">
+                <image>
+                    <Image url="@../imgs/logoapp.png" />
+                </image>
+            </ImageView>
+        </VBox>
+
+        <!-- Sidebar Buttons -->
+        <VBox spacing="10.0" style="-fx-padding: 10;">
+            <!-- Dashboard Button -->
+            <Button prefHeight="40.0" prefWidth="192.0" style="-fx-background-color: transparent;" text="Dashboard">
+                <graphic>
+                    <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../imgs/dashboard2.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <!-- Applications Button -->
+            <Button prefHeight="40.0" prefWidth="192.0" style="-fx-background-color: transparent;" text="Applications">
+                <graphic>
+                    <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../imgs/apps2.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <!-- Reports Button -->
+            <Button prefHeight="40.0" prefWidth="192.0" style="-fx-background-color: transparent;" text="Reports">
+                <graphic>
+                    <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../imgs/reports.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <!-- My Goals Button -->
+            <Button prefHeight="40.0" prefWidth="192.0" style="-fx-background-color: transparent;" text="My Goals">
+                <graphic>
+                    <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../imgs/goals.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <!-- App Block Button -->
+            <Button prefHeight="40.0" prefWidth="192.0" style="-fx-background-color: transparent;" text="App Block">
+                <graphic>
+                    <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../imgs/appblock2.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <!-- App Limits Button -->
+            <Button prefHeight="40.0" prefWidth="192.0" style="-fx-background-color: transparent;" text="App Limits">
+                <graphic>
+                    <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../imgs/applim2.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <!-- Notifications Button -->
+            <Button prefHeight="40.0" prefWidth="192.0" style="-fx-background-color: transparent;" text="Notifications">
+                <graphic>
+                    <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../imgs/notf2.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </VBox>
+
+        <!-- Settings and Logout -->
+        <VBox spacing="10.0" style="-fx-padding: 40 10 10 10;">
+            <Button prefHeight="40.0" prefWidth="192.0" style="-fx-background-color: transparent;" text="Settings">
+                <graphic>
+                    <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../imgs/settings.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button prefHeight="40.0" prefWidth="192.0" style="-fx-background-color: transparent;" text="Log out">
+                <graphic>
+                    <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../imgs/logout.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </VBox>
+    </VBox>
+
+    <!-- Main Content Area -->
+    <VBox AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0" style="-fx-padding: 20;">
+        <!-- Header -->
+        <HBox alignment="CENTER_LEFT" prefHeight="40.0" spacing="10.0" style="-fx-background-color: #d3d3d3; -fx-padding: 10;">
+            <ImageView fitHeight="20.0" fitWidth="20.0">
+                <image>
+                    <Image url="@../imgs/tasks.png" />
+                </image>
+            </ImageView>
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Tasks" />
+        </HBox>
+
+        <!-- Add Task Button -->
+        <HBox alignment="CENTER_RIGHT" prefHeight="50.0" spacing="10.0" style="-fx-padding: 10;">
+            <Button fx:id="addTaskButton" onAction="#handleAddTaskButtonClick" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #f94c4c; -fx-text-fill: white;" text="Add New Task">
+                <graphic>
+                    <ImageView fitHeight="20.0" fitWidth="20.0">
+                        <image>
+                            <Image url="@../imgs/add.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </HBox>
+
+        <!-- Tasks Table -->
+        <TableView fx:id="tasksTable" prefHeight="400.0">
+            <columns>
+                <TableColumn fx:id="taskNameColumn" text="Task Name" />
+                <TableColumn fx:id="descriptionColumn" text="Description" />
+                <TableColumn fx:id="statusColumn" text="Status" />
+                <TableColumn fx:id="actionColumn" text="Actions" />
+            </columns>
+        </TableView>
+    </VBox>
+</AnchorPane>

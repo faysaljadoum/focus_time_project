@@ -1,7 +1,7 @@
 package com.example.focus_time.Controllers;
 
 import com.example.focus_time.Models.Task;
-import com.example.focus_time.Models.DBConnection;
+import com.example.focus_time.utils.DBConnection;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
@@ -84,7 +84,7 @@ public class EditTaskController {
     private void updateTaskInDatabase(Task task) {
         String sql = "UPDATE Tache SET nom = ?, description = ?, statut = ? WHERE id = ?";
 
-        try (Connection connection = DBConnection.getConnection();
+        try (Connection connection = DBConnection.connect();
              PreparedStatement stmt = connection.prepareStatement(sql)) {
 
             stmt.setString(1, task.getNom());

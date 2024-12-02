@@ -1,7 +1,8 @@
 package com.example.focus_time.Controllers;
 
-import com.example.focus_time.Models.DBConnection;
+
 import com.example.focus_time.Models.Task;
+import com.example.focus_time.utils.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -148,7 +149,7 @@ public class TaskController {
         this.currentGoalId = goalId;  // Set the goalId for task-related actions
         tasksList.clear();
         String query = "SELECT * FROM Tache WHERE objectif_id = ?";
-        try (Connection conn = DBConnection.getConnection();
+        try (Connection conn = DBConnection.connect();
              PreparedStatement preparedStatement = conn.prepareStatement(query)) {
 
             preparedStatement.setInt(1, goalId);
@@ -180,7 +181,7 @@ public class TaskController {
         alert.showAndWait().ifPresent(response -> {
             if (response == ButtonType.OK) {
                 String query = "DELETE FROM Tache WHERE id = ?";
-                try (Connection conn = DBConnection.getConnection();
+                try (Connection conn = DBConnection.connect();
                      PreparedStatement stmt = conn.prepareStatement(query)) {
 
                     stmt.setInt(1, task.getId());
@@ -196,7 +197,7 @@ public class TaskController {
 
     private void updateTaskStatus(Task task) {
         String query = "UPDATE Tache SET statut = ? WHERE id = ?";
-        try (Connection conn = DBConnection.getConnection();
+        try (Connection conn = DBConnection.connect();
              PreparedStatement preparedStatement = conn.prepareStatement(query)) {
 
             preparedStatement.setBoolean(1, task.isStatut());

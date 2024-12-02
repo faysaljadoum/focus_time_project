@@ -93,7 +93,7 @@ public class AddGoalController {
             connection = DBConnection.connect();
 
             // Insert into ObjectifProductivite table
-            String insertGoalQuery = "INSERT INTO ObjectifProductivite (nom, description, dateDebut, dateFin, application_id) VALUES (?, ?, ?, ?, ?)";
+            String insertGoalQuery = "INSERT INTO ObjectifProductivite (nom, description, dateDebut, dateFin, user_id) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement goalStatement = connection.prepareStatement(insertGoalQuery, PreparedStatement.RETURN_GENERATED_KEYS);
             goalStatement.setString(1, goalName);
             goalStatement.setString(2, goalDescription);

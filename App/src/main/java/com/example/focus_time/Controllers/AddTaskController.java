@@ -1,13 +1,12 @@
 package com.example.focus_time.Controllers;
 
-import com.example.focus_time.Models.Task;
-import com.example.focus_time.Models.DBConnection;
+
+import com.example.focus_time.utils.DBConnection;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
 import java.sql.Connection;
@@ -51,7 +50,7 @@ public class AddTaskController {
             boolean isDone = status.equals("Done");
 
             String query = "INSERT INTO Tache (nom, description, statut, objectif_id) VALUES (?, ?, ?, ?)";
-            try (Connection conn = DBConnection.getConnection();
+            try (Connection conn = DBConnection.connect();
                  PreparedStatement preparedStatement = conn.prepareStatement(query)) {
 
                 preparedStatement.setString(1, taskName);

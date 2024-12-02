@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBConnection {
 
-    private static final String URL = "jdbc:mysql://localhost:4306/focustime_db";
+    private static final String URL = "jdbc:mysql://localhost:3306/focustime_db";
     private static final String USER = "root"; // Your MySQL username
     private static final String PASSWORD = ""; // Your MySQL password
 

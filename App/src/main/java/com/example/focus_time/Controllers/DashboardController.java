@@ -1,6 +1,6 @@
 package com.example.focus_time.Controllers;
 
-import com.example.focus_time.Classes.SceneManager;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -19,6 +19,6 @@ public class DashboardController {
     @FXML
     private void goToGoals(ActionEvent event) {
         // Navigate to the Goals page
-        SceneManager.switchScene("Goals.fxml");
+        //SceneManager.switchScene("Goals.fxml");
     }
 }
