@@ -58,4 +58,52 @@ public class DashboardController {
             e.printStackTrace();
         }
     }
+    @FXML
+    private void goToAppBlock(ActionEvent event) {
+        try {
+            // Load the Applications.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BlockedApp.fxml"));
+            Parent applicationsRoot = loader.load();
+
+            // Get the current stage
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            // Set the new scene
+            stage.setScene(new Scene(applicationsRoot));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void goToAppLim(ActionEvent event) {
+        try {
+            // Load the Applications.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/LimitedApp.fxml"));
+            Parent applicationsRoot = loader.load();
+
+            // Get the current stage
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            // Set the new scene
+            stage.setScene(new Scene(applicationsRoot));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void goToNotf(ActionEvent event) {
+        try {
+            // Load the Applications.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Notifications.fxml"));
+            Parent applicationsRoot = loader.load();
+
+            // Get the current stage
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            // Set the new scene
+            stage.setScene(new Scene(applicationsRoot));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
