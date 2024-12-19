@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane fx:id="parent" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.focus_time.Controllers.NotificationsController">
+    <fx:include source="Sidebar.fxml"/>
+    <VBox layoutY="99.2" prefHeight="501.0" prefWidth="600.0" style="-fx-padding: 20;" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="99.0">
+        <!-- Dashboard Label with Gray Background -->
+
+        <HBox prefHeight="35.0" prefWidth="560.0" spacing="10.0"
+              style="-fx-background-color: #d3d3d3; -fx-padding: 2; -fx-alignment: center-left;">
+            <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                <image>
+                    <Image url="@../imgs/notf2.png"/>
+                </image>
+            </ImageView>
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Notifications"/>
+        </HBox>
+    </VBox>
+</AnchorPane>
