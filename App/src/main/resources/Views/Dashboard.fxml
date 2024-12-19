@@ -84,7 +84,10 @@
                     <Label style="-fx-font-size: 24px; -fx-text-fill: white; -fx-font-weight: bold;" text="3" />
                 </HBox>
                 <Label style="-fx-text-fill: white;" text="App Blocking" />
-                <Button prefHeight="40.0" prefWidth="192.0" style="-fx-background-color: transparent; -fx-alignment: CENTER_RIGHT;">
+                <Button fx:id="viewAppBlockButton"
+                        onAction="#goToAppBlock"
+                        prefHeight="40.0" prefWidth="192.0"
+                        style="-fx-background-color: transparent; -fx-alignment: CENTER_RIGHT;">
                     <graphic>
                         <HBox alignment="CENTER" spacing="5.0">
                             <Label text="VIEW DETAILS" style="-fx-font-size: 14px; -fx-text-fill: white;" />
@@ -95,6 +98,9 @@
                             </ImageView>
                         </HBox>
                     </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
                 </Button>
             </VBox>
 
@@ -114,7 +120,10 @@
                             </children>
                         </HBox>
                         <Label style="-fx-text-fill: white;" text="App Limits" />
-                        <Button prefHeight="40.0" prefWidth="192.0" style="-fx-background-color: transparent; -fx-alignment: CENTER_RIGHT;">
+                        <Button fx:id="viewAppLimiButton"
+                                onAction="#goToAppLim"
+                                prefHeight="40.0" prefWidth="192.0"
+                                style="-fx-background-color: transparent; -fx-alignment: CENTER_RIGHT;">
                             <graphic>
                                 <HBox alignment="CENTER" spacing="5.0">
                                     <Label text="VIEW DETAILS" style="-fx-font-size: 14px; -fx-text-fill: white;" />
@@ -125,6 +134,9 @@
                                     </ImageView>
                                 </HBox>
                             </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
                         </Button>
                     </children>
                 </VBox>
@@ -141,7 +153,10 @@
                             </children>
                         </HBox>
                         <Label style="-fx-text-fill: white;" text="Notifications" />
-                        <Button prefHeight="40.0" prefWidth="192.0" style="-fx-background-color: transparent; -fx-alignment: CENTER_RIGHT;">
+                        <Button fx:id="viewNotf"
+                                onAction="#goToNotf"
+                                prefHeight="40.0" prefWidth="192.0"
+                                style="-fx-background-color: transparent; -fx-alignment: CENTER_RIGHT;">
                             <graphic>
                                 <HBox alignment="CENTER" spacing="5.0">
                                     <Label text="VIEW DETAILS" style="-fx-font-size: 14px; -fx-text-fill: white;" />
@@ -152,6 +167,9 @@
                                     </ImageView>
                                 </HBox>
                             </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
                         </Button>
                     </children>
                 </VBox>
